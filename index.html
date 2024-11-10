@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>HBD love by Aayush Joshi</title>	    
         <link type="text/css" rel="stylesheet" href="./file/default.css">
@@ -15,8 +15,13 @@
             function playAudio() {
                 var audio = document.getElementById("myAudio");
                 audio.play();
+                document.getElementById("thinkstack-chat-window-toggler").click();
             }
         </script>
+        <script
+        chatbot_id="67310e0742143bc1d9c6744c"
+        src="https://app.thinkstack.ai/bot/thinkstackai-loader.min.js">
+    </script>
 	    <style type="text/css">
         </style>
 </head>
@@ -58,6 +63,30 @@
     </script>
 
     <script>
+
+// Typewriter effect function
+(function($) {
+            $.fn.typewriter = function() {
+                this.each(function() {
+                    var $ele = $(this), str = $ele.html(), progress = 0;
+                    $ele.html('');
+                    var timer = setInterval(function() {
+                        var current = str.substr(progress, 1);
+                        if (current === '<') {
+                            progress = str.indexOf('>', progress) + 1;
+                        } else {
+                            progress++;
+                        }
+                        $ele.html(str.substring(0, progress) + (progress & 1 ? '_' : ''));
+                        if (progress >= str.length) {
+                            clearInterval(timer);
+                        }
+                    }, 75);
+                });
+                return this;
+            };
+        })(jQuery);
+
     (function(){
         var canvas = $('#canvas');
 		
